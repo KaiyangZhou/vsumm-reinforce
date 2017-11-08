@@ -1,2 +1,2 @@
-# Unsupervised video summarization with deep reinforcement learning
+# Deep Reinforcement Learning for Unsupervised Video Summarization with Diversity-Representativeness Reward
 codes coming soon ...
