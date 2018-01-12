@@ -64,9 +64,7 @@ class reinforceRNN(object):
 
         repeated_probs = T.extra_ops.repeat(probs[None,:], repeats=n_episodes, axis=0) # (n_episodes, n_steps)
         actions = trng.binomial(n=1, p=repeated_probs, size=repeated_probs.shape) # (n_episodes, n_steps)
-
-        # Note: when modifing the reward computation function, make sure the corresponding single
-        # function is modified too.
+        
         def _compute_reward(_a, _L, _Ld):
             """
             _a: actions at timestep t
