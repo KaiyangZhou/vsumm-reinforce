@@ -162,4 +162,4 @@ if __name__ == '__main__':
           distant_sim_thre=args.distant_sim_thre,
           alpha=args.alpha,
           disp_freq=args.disp_freq,
-          train_dataset_path=args.dataset,)
+          train_dataset_path=args.dataset)

@@ -6,12 +6,12 @@ To get the datasets and models, you will need `wget`.
 
 Run the following commands in order
 ```
-$ git clone https://github.com/KaiyangZhou/vsumm-reinforce
-$ cd vsumm-reinforce
-$ wget http://www.eecs.qmul.ac.uk/~kz303/vsumm-reinforce/datasets.tar.gz
-$ tar -xvzf datasets.tar.gz
-$ wget http://www.eecs.qmul.ac.uk/~kz303/vsumm-reinforce/models.tar.gz
-$ tar -xvzf models.tar.gz
+git clone https://github.com/KaiyangZhou/vsumm-reinforce
+cd vsumm-reinforce
+wget http://www.eecs.qmul.ac.uk/~kz303/vsumm-reinforce/datasets.tar.gz
+tar -xvzf datasets.tar.gz
+wget http://www.eecs.qmul.ac.uk/~kz303/vsumm-reinforce/models.tar.gz
+tar -xvzf models.tar.gz
 ```
 
 ## How to train
@@ -23,10 +23,10 @@ python vsum_train.py --dataset datasets/eccv16_dataset_tvsum_google_pool5.h5 --m
 ## How to test
 Test code is implemented in `vsum_test.py`. For example, to test with our models, simply run
 ```
-$ python vsum_test.py -model models/model_tvsum_reinforceRNN.h5 -d tvsum
-$ python vsum_test.py -model models/model_tvsum_reinforceRNN_sup.h5 -d tvsum
-$ python vsum_test.py -model models/model_summe_reinforceRNN.h5 -d summe
-$ python vsum_test.py -model models/model_summe_reinforceRNN_sup.h5 -d summe
+python vsum_test.py -model models/model_tvsum_reinforceRNN.h5 -d tvsum
+python vsum_test.py -model models/model_tvsum_reinforceRNN_sup.h5 -d tvsum
+python vsum_test.py -model models/model_summe_reinforceRNN.h5 -d summe
+python vsum_test.py -model models/model_summe_reinforceRNN_sup.h5 -d summe
 ```
 
 ## Citation
