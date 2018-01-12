@@ -114,7 +114,7 @@ class reinforceRNN(object):
         
         self.model_train = theano.function(
           inputs=[x, learn_rate, L_dissim_mat, L_distance_mat, baseline_reward],
-          outputs=[rewards, rewards_div, rewards_rep],
+          outputs=rewards,
           updates=updates,
           on_unused_input='ignore',
           allow_input_downcast=True

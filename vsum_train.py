@@ -68,14 +68,10 @@ def train(n_episodes=5,
     start_time = time.time()
     blrwds = {name:np.array(0).astype(_DTYPE) for name in dataset_keys} # baseline rewards
 
-    reward_history = []
-
     for i_epoch in range(max_epochs):
         indices = np.arange(n_videos)
         np.random.shuffle(indices)
         epoch_reward = 0.
-        epoch_reward_div = 0.
-        epoch_reward_rep = 0.
 
         if decay_stepsize != -1 and i_epoch >= decay_stepsize:
             power_n = int(i_epoch/decay_stepsize)
@@ -92,21 +88,15 @@ def train(n_episodes=5,
                 inds = np.arange(data_x.shape[0])[:,None]
                 inds_dist = cdist(inds, inds, 'minkowski', 1)
                 L_dissim_mat[inds_dist > distant_sim_thre] = 1
-            rewards, rewards_div, rewards_rep = net.model_train(data_x, learn_rate, L_dissim_mat, L_distance_mat, blrwds[key])
+            rewards = net.model_train(data_x, learn_rate, L_dissim_mat, L_distance_mat, blrwds[key])
             blrwds[key] = 0.9 * blrwds[key] + 0.1 * rewards.mean()
             epoch_reward += rewards.mean()
-            epoch_reward_div += rewards_div.mean()
-            epoch_reward_rep += rewards_rep.mean()
 
         epoch_reward /= n_videos
-        epoch_reward_div /= n_videos
-        epoch_reward_rep /= n_videos
 
         if (i_epoch+1) % disp_freq == 0 or (i_epoch+1) == max_epochs:
-            logger.info('epoch %3d/%d. reward %f. reward-div %f. reward-rep %f.' % \
-                       (i_epoch+1, max_epochs, epoch_reward, epoch_reward_div, epoch_reward_rep))
-
-        reward_history.append((epoch_reward, epoch_reward_div, epoch_reward_rep))
+            logger.info('epoch %3d/%d. reward %f.' % \
+                       (i_epoch+1, max_epochs, epoch_reward))
 
     elapsed_time = time.time() - start_time
     logger.info('elapsed time %.2f s' % (elapsed_time))
