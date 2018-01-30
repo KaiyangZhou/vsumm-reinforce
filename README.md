@@ -10,8 +10,10 @@ Run the following commands in order
 ```
 git clone https://github.com/KaiyangZhou/vsumm-reinforce
 cd vsumm-reinforce
+# download datasets.tar.gz (173.5 MB)
 wget http://www.eecs.qmul.ac.uk/~kz303/vsumm-reinforce/datasets.tar.gz
 tar -xvzf datasets.tar.gz
+# download models.tar.gz (39.4 MB)
 wget http://www.eecs.qmul.ac.uk/~kz303/vsumm-reinforce/models.tar.gz
 tar -xvzf models.tar.gz
 ```
