@@ -37,7 +37,7 @@ python vsum_test.py -model models/model_summe_reinforceRNN_sup.h5 -d summe
 ```
 @article{zhou2017reinforcevsumm, 
    title={Deep Reinforcement Learning for Unsupervised Video Summarization with Diversity-Representativeness Reward},
-   author={Zhou, Kaiyang and Qiao, Yu}, 
+   author={Zhou, Kaiyang and Qiao, Yu and Xiang, Tao}, 
    journal={arXiv:1801.00054}, 
    year={2017} 
 }
