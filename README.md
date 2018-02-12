@@ -18,6 +18,8 @@ wget http://www.eecs.qmul.ac.uk/~kz303/vsumm-reinforce/models.tar.gz
 tar -xvzf models.tar.gz
 ```
 
+(Email me if you are unable to download these files)
+
 ## How to train
 Training code is implemented in `vsum_train.py`. To train a RNN, run
 ```
