@@ -1,7 +1,7 @@
 # Deep Reinforcement Learning for Unsupervised Video Summarization with Diversity-Representativeness Reward
 We propose a reinforcement learning framework to train recurrent neural network for unsupervised video summarization. The reward function consists of a diversity reward and a representativeness reward. It assesses how diverse and representative the generated video summaries are during training, while the network tries to earn higher rewards by producing more diverse and more representative summaries. The reward function is fully unsupervised, so no labels or human interactions are required at all. We have tested our method on two commonly used benchmark datasets, SumMe and TVSum. Our results not only outperform other state-of-the-art unsupervised methods, but also are comparable or even better than most supervised methods.
 
-We implemented our method using [Theano](http://deeplearning.net/software/theano/) (version `0.9.0`; note: using the latest version might encounter errors). Paper is available [here](https://arxiv.org/abs/1801.00054). (We will release the improved pytorch code in the near future)
+We implemented our method using [Theano](http://deeplearning.net/software/theano/) (version `0.9.0`; note: using the latest version might encounter errors). Paper is available [here](https://arxiv.org/abs/1801.00054).
 
 ## Preparation
 To get the datasets and models, you will need `wget`.
@@ -34,6 +34,10 @@ python vsum_test.py -model models/model_tvsum_reinforceRNN_sup.h5 -d tvsum
 python vsum_test.py -model models/model_summe_reinforceRNN.h5 -d summe
 python vsum_test.py -model models/model_summe_reinforceRNN_sup.h5 -d summe
 ```
+
+## Recipes
+1. Increase the training epochs if you use large dataset, e.g. >100 videos.
+2. To reduce variance during training, you can normalize the reward via mean subtraction + divide by standard deviation (not supported in current version).
 
 ## Citation
 ```
