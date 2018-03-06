@@ -35,10 +35,6 @@ python vsum_test.py -model models/model_summe_reinforceRNN.h5 -d summe
 python vsum_test.py -model models/model_summe_reinforceRNN_sup.h5 -d summe
 ```
 
-## Recipes
-1. Increase training epochs if you use large datasets, e.g. >100 videos, and adjust decay step size accordingly.
-2. To reduce variance during training, you can normalize the reward via mean subtraction + divide by standard deviation (not supported in current version).
-
 ## Citation
 ```
 @article{zhou2017reinforcevsumm, 
