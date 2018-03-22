@@ -60,7 +60,10 @@ def train(n_episodes=5,
 
     logger.info('loading training data from %s' % (train_dataset_path))
     dataset = h5py.File(train_dataset_path, 'r')
-    dataset_keys = dataset.keys()
+    if sys.version_info[0] == 3:
+        dataset_keys = list(dataset.keys())
+    else:
+        dataset_keys = dataset.keys()
     n_videos = len(dataset_keys)
     logger.info('total number of videos for training is %d' % n_videos)
 

@@ -58,7 +58,10 @@ def test(n_episodes=5,
     logger.info('loading %s data' % (eval_dataset))
     h5f_path = 'datasets/eccv16_dataset_' + eval_dataset + '_google_pool5.h5'
     dataset = h5py.File(h5f_path, 'r')
-    dataset_keys = dataset.keys()
+    if sys.version_info[0] == 3:
+        dataset_keys = list(dataset.keys())
+    else:
+        dataset_keys = dataset.keys()
     n_videos = len(dataset_keys)
 
     logger.info('=> testing')
