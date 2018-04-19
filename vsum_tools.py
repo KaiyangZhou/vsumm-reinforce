@@ -1,7 +1,6 @@
 import numpy as np
 from knapsack import knapsack_dp
-import math, os, glob, cv2, shutil, re
-from scipy.spatial.distance import cdist
+import math
 
 def generate_summary(ypred, cps, n_frames, nfps, positions, proportion=0.15):
     """ Generate keyshot-based video summary i.e. a binary vector
