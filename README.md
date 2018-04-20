@@ -3,6 +3,8 @@ We propose a reinforcement learning framework to train recurrent neural network 
 
 We implemented our method using [Theano](http://deeplearning.net/software/theano/) (version `0.9.0`; note: using the latest version might encounter errors). Paper is available [here](https://arxiv.org/abs/1801.00054).
 
+Pytorch implementation can be found [here](https://github.com/KaiyangZhou/pytorch-vsumm-reinforce).
+
 ## Preparation
 To get the datasets and models, you will need `wget`.
 
