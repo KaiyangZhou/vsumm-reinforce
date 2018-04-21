@@ -7,6 +7,7 @@ from model_reinforceRNN import reinforceRNN
 import numpy as np
 from datetime import datetime
 import time, math, os, sys, h5py, logging, vsum_tools, argparse
+import os.path as osp
 from scipy.spatial.distance import cdist
 
 _DTYPE = theano.config.floatX
@@ -70,6 +71,9 @@ def test(n_episodes=5,
     precs = []
     recs = []
 
+    # save output results to h5 file
+    h5_res = h5py.File(osp.join(log_dir, 'result.h5'), 'w')
+
     for i_video in range(n_videos):
         key = dataset_keys[i_video]
         data_x = dataset[key]['features'][...].astype(_DTYPE)
@@ -87,6 +91,14 @@ def test(n_episodes=5,
         precs.append(prec)
         recs.append(rec)
         if verbose: logger.info('video %s. fm=%f' % (key, fm))
+
+        # save results for each test video
+        h5_res.create_dataset(key + '/score', data=probs)
+        h5_res.create_dataset(key + '/machine_summary', data=machine_summary)
+        h5_res.create_dataset(key + '/gtscore', data=dataset[key]['gtscore'][...])
+        h5_res.create_dataset(key + '/fm', data=fm)
+
+    h5_res.close()
 
     mean_fm = np.mean(fms)
     mean_prec = np.mean(precs)
