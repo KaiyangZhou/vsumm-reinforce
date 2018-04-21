@@ -2,7 +2,7 @@
 This is the official implementation of the AAAI'18 paper [Deep Reinforcement Learning for Unsupervised Video Summarization with Diversity-Representativeness Reward](https://arxiv.org/abs/1801.00054). The code is based on Theano (version `0.9.0`).
 
 <div align="center">
-  <img src="imgs/pipeline.pdf" alt="train" width="50%">
+  <img src="imgs/pipeline.jpg" alt="train" width="50%">
 </div>
 
 Pytorch implementation can be found [here](https://github.com/KaiyangZhou/pytorch-vsumm-reinforce).
