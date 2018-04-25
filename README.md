@@ -44,6 +44,13 @@ Output results are saved to `log-test/results.h5`. To visualize score-vs-gtscore
 python visualize_results.py -p log-test/result.h5
 ```
 
+## Visualize summary
+You can use `summary2video.py` to transform the binary `machine_summary` to real summary video. You need to have a directory containing video frames. The code will automatically write summary frames to a video where the frame rate can be controlled. Use the following command to generate a `.mp4` video
+```bash
+python summary2video.py -p path_to/result.h5 -d path_to/video_frames -i 0 --fps 30 --save-dir log --save-name summary.mp4
+```
+Please remember to specify the naming format of your video frames on this [line](https://github.com/KaiyangZhou/vsumm-reinforce/blob/master/summary2video.py#L22).
+
 ## Citation
 ```
 @article{zhou2017reinforcevsumm, 
