@@ -21,8 +21,7 @@ tar -xvzf datasets.tar.gz
 wget http://www.eecs.qmul.ac.uk/~kz303/vsumm-reinforce/models.tar.gz
 tar -xvzf models.tar.gz
 ```
-
-(Email me if you are unable to download these files)
+**Updates**: The QMUL server is inaccessible. Download the datasets from this [google drive linke](https://drive.google.com/open?id=1Bf0beMN_ieiM3JpprghaoOwQe9QJIyAN).
 
 ## How to train
 Training code is implemented in `vsum_train.py`. To train a RNN, run
